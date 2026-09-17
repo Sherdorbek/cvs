@@ -7,16 +7,12 @@ RUN apk add --no-cache \
     libpng-dev \
     libjpeg-turbo-dev \
     libxml2-dev \
-    zip \
-    unzip \
+    libzip-dev \
     postgresql-dev \
     && docker-php-ext-install \
     pdo_pgsql \
-    pdo \
     gd \
-    xml \
     zip
-
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
